@@ -13,14 +13,13 @@
         <h1>Iniciar Sesión</h1>
         <input type="text" id="usuario" placeholder="Usuario">
         <input type="password" id="contrasena" placeholder="Contraseña">
-        <button class="boton-iniciar" id="btnIniciar">Ingresar</button>
+        <button class="boton-iniciar" onclick="verificarLogin()">Ingresar</button>
         <p id="mensajeError"></p>
     </div>
 
     <!-- Contenedor de la animación -->
-    <div class="contenedor-animacion" id="contenedorAnimacion">
+    <div class="contenedor-animacion" id="contenedorAnimacion" style="display: none;">
         <canvas id="miCanvas"></canvas>
-        <p>Mi Animación en Canvas</p>
     </div>
 
     <script src="script.js"></script>
