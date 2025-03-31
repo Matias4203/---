@@ -1,29 +1,23 @@
-/// Referencias a los elementos del DOM
-const loginScreen = document.getElementById('login-screen');
-const canvas = document.getElementById('c');
-const loginForm = document.getElementById('login-form');
-const errorMessage = document.getElementById('error-message');
-
-// Usuarios permitidos
-const users = {
-  Alondra: '123456',
-  Matias: '123456'
-};
-
-// Manejo del inicio de sesión
 loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
+  const users = {
+    Alondra: '123456',
+    Matias: '123456'
+  };
+
   if (users[username] === password) {
     // Ocultar pantalla de inicio
     loginScreen.style.display = 'none';
-    
-    // Mostrar el canvas y llamar a la animación
+
+    // Mostrar el lienzo
     canvas.style.display = 'block';
-    anim(); // Asegúrate de tener esta función en tu código original
+
+    // Llamar a la función de animación
+    anim();
   } else {
     errorMessage.textContent = 'Usuario o contraseña incorrectos.';
   }
