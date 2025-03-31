@@ -8,10 +8,13 @@
 </head>
 <body>
 
-    <!-- Pantalla inicial -->
+    <!-- Pantalla de inicio (Login) -->
     <div class="pantalla-inicial" id="pantallaInicial">
-        <h1>Bienvenido a mi web animada</h1>
-        <button class="boton-iniciar" onclick="iniciarAnimacion()">Ingresar</button>
+        <h1>Iniciar Sesión</h1>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+        <button class="boton-iniciar" onclick="verificarLogin()">Ingresar</button>
+        <p id="mensajeError"></p>
     </div>
 
     <!-- Contenedor de la animación -->
