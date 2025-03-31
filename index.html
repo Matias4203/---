@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday My Love</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div id="login-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f3f3f3;">
-    <h2>Inicio de Sesión</h2>
-    <form id="login-form">
-      <input type="text" id="username" placeholder="Usuario" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-    <div id="error-message" style="color: red; margin-top: 10px;"></div>
-  </div>
-
-  <!-- Pantalla de Animación Oculta -->
+<div id="login-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f3f3f3;">
+  <h2>Inicio de Sesión</h2>
+  <form id="login-form">
+    <input type="text" id="username" placeholder="Usuario" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+  <div id="error-message" style="color: red; margin-top: 10px;"></div>
+</div>
+<!-- Pantalla de Animación Oculta -->
   <canvas id="c" style="display: none;"></canvas>
   <script src="./script.js"></script>
 </body>
