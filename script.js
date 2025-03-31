@@ -1,4 +1,4 @@
-// Referencias a los elementos del DOM
+/// Referencias a los elementos del DOM
 const loginScreen = document.getElementById('login-screen');
 const canvas = document.getElementById('c');
 const loginForm = document.getElementById('login-form');
@@ -13,6 +13,21 @@ const users = {
 // Manejo del inicio de sesión
 loginForm.addEventListener('submit', function (event) {
   event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (users[username] === password) {
+    // Ocultar pantalla de inicio
+    loginScreen.style.display = 'none';
+    
+    // Mostrar el canvas y llamar a la animación
+    canvas.style.display = 'block';
+    anim(); // Asegúrate de tener esta función en tu código original
+  } else {
+    errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+  }
+});
 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
