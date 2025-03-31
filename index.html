@@ -1,5 +1,5 @@
 <body>
-  <!-- Pantalla de Inicio (única) -->
+  <!-- Pantalla de inicio -->
   <div id="login-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f3f3f3;">
     <h2>Inicio de Sesión</h2>
     <form id="login-form">
@@ -9,106 +9,40 @@
     </form>
     <div id="error-message" style="color: red; margin-top: 10px;"></div>
   </div>
-  
-  <!-- Animación -->
+
+  <!-- Lienzo para la animación -->
   <canvas id="c" style="display: none;"></canvas>
 </body>
-<!-- Pantalla de Animación Oculta -->
-  <canvas id="c" style="display: none;"></canvas>
-  <script src="./script.js"></script>
-</body>
-</html>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pantalla de Inicio</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(to bottom, #6a11cb, #2575fc);
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    .login-container {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    input {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    button {
-      background: #4caf50;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #45a049;
-    }
-
-    .error {
-      color: #ff6961;
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Happy Birthday My Love</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="login-container">
-    <h2>Inicio de Sesión</h2>
-    <form id="login-form">
-      <input type="text" id="username" placeholder="Usuario" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar Sesión</button>
-      <div id="error-message" class="error"></div>
-    </form>
-  </div>
-  <script>
-    const loginForm = document.getElementById('login-form');
-    const errorMessage = document.getElementById('error-message');
+<!-- partial:index.partial.html -->
 
-    // Usuarios permitidos
-    const users = {
-      Alondra: '123456',
-      Matias: '123456'
-    };
+<canvas id=c></canvas>
 
-    loginForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+<!-- partial -->
+  <script  src="./script.js"></script>
 
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+   <!-- 
 
-      // Validación
-      if (users[username] === password) {
-        window.location.href = 'tu-archivo-original.html'; // Cambia "tu-archivo-original.html" por el nombre de tu archivo principal con la animación.
-      } else {
-        errorMessage.textContent = 'Usuario o contraseña incorrectos.';
-      }
-    });
-  </script>
+Contáctame:
+
+    * Invitame un café
+ https://buymeacoffee.com/alexx.dev
+
+    * Sigueme en tiktok
+ https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
+ 
+    *Canal de WhatsApp
+ https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
+
+-->
+
 </body>
 </html>
