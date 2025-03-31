@@ -1,27 +1,3 @@
-loginForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  const users = {
-    Alondra: '123456',
-    Matias: '123456'
-  };
-
-  if (users[username] === password) {
-    // Ocultar pantalla de inicio
-    loginScreen.style.display = 'none';
-
-    // Mostrar el lienzo
-    canvas.style.display = 'block';
-
-    // Llamar a la función de animación
-    anim();
-  } else {
-    errorMessage.textContent = 'Usuario o contraseña incorrectos.';
-  }
-});
 var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
