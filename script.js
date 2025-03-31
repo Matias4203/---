@@ -22,22 +22,6 @@ loginForm.addEventListener('submit', function (event) {
     errorMessage.textContent = 'Usuario o contraseña incorrectos.';
   }
 });
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  if (users[username] === password) {
-    // Ocultar pantalla de inicio
-    loginScreen.style.display = 'none';
-    
-    // Mostrar el canvas y llamar a la animación
-    canvas.style.display = 'block';
-    anim(); // Asegúrate de tener esta función en tu código original
-  } else {
-    errorMessage.textContent = 'Usuario o contraseña incorrectos.';
-  }
-});
-
 var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
