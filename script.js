@@ -1,3 +1,27 @@
+// Evitar eventos duplicados
+let isLoginEventAttached = false;
+
+if (!isLoginEventAttached) {
+  loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (users[username] === password) {
+      // Ocultar pantalla de inicio y mostrar animación
+      loginScreen.style.display = 'none';
+      canvas.style.display = 'block';
+      
+      // Iniciar la animación
+      anim();
+    } else {
+      errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+    }
+  });
+
+  isLoginEventAttached = true;
+}
 // Lógica de inicio de sesión
 const loginScreen = document.getElementById('login-screen');
 const canvas = document.getElementById('c');
