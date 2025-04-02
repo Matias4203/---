@@ -1,19 +1,13 @@
-<body>
-  <!-- Pantalla de inicio -->
-  <div id="login-screen" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f3f3f3;">
-    <h2>Inicio de Sesión</h2>
-    <form id="login-form">
-      <input type="text" id="username" placeholder="Usuario" required>
-      <input type="password" id="password" placeholder="Contraseña" required>
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-    <div id="error-message" style="color: red; margin-top: 10px;"></div>
-  </div>
-
-  <!-- Lienzo para la animación -->
-  <canvas id="c" style="display: none;"></canvas>
-</body>
-
+<!-- Pantalla de registro -->
+<div id="register-screen" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #1e3c72; color: white;">
+  <h2>Registro</h2>
+  <form id="register-form">
+    <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+    <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
+    <button type="submit">Registrar</button>
+  </form>
+  <button id="go-to-login">Volver al Inicio de Sesión</button>
+</div>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
