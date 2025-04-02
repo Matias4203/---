@@ -1,3 +1,55 @@
+// Referencias a los elementos del DOM
+const loginScreen = document.getElementById('login-screen');
+const registerScreen = document.getElementById('register-screen');
+const canvas = document.getElementById('c');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const errorMessage = document.getElementById('error-message');
+const goToLogin = document.getElementById('go-to-login');
+
+// Base de datos simulada
+const users = {
+  Alondra: '123456',
+  Matias: '123456'
+};
+
+// Mostrar pantalla de registro
+document.getElementById('go-to-login').addEventListener('click', function () {
+  registerScreen.style.display = 'none';
+  loginScreen.style.display = 'flex';
+});
+
+// Manejo del registro
+registerForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const newUsername = document.getElementById('new-username').value;
+  const newPassword = document.getElementById('new-password').value;
+
+  if (newUsername && newPassword) {
+    users[newUsername] = newPassword; // Agrega un nuevo usuario
+    alert(`Usuario registrado: ${newUsername}`);
+    registerScreen.style.display = 'none';
+    loginScreen.style.display = 'flex';
+  }
+});
+
+// Manejo del inicio de sesión
+loginForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (users[username] === password) {
+    // Ocultar pantalla de inicio y mostrar la animación
+    loginScreen.style.display = 'none';
+    canvas.style.display = 'block';
+    anim(); // Inicia la animación
+  } else {
+    errorMessage.textContent = 'Usuario o contraseña incorrectos.';
+  }
+});
 var w = c.width = window.innerWidth,
 		h = c.height = window.innerHeight,
 		ctx = c.getContext( '2d' ),
