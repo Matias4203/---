@@ -51,14 +51,14 @@ loginForm.addEventListener('submit', function (event) {
   }
 });
 
-// Código original para la animación
+// Aquí comienza tu código original de animación
 var w = canvas.width = window.innerWidth,
     h = canvas.height = window.innerHeight,
     ctx = canvas.getContext('2d'),
 
-    hw = w / 2,
+    hw = w / 2, 
     hh = h / 2,
-
+    
     opts = {
         strings: ['HAPPY', 'BIRTHDAY!', 'My Love'],
         charSize: 30,
@@ -130,7 +130,8 @@ function Letter(char, x, y) {
 
     this.reset();
 }
-Letter.prototype.reset = function () {
+Letter.prototype.reset = function() {
+
     this.phase = 'firework';
     this.tick = 0;
     this.spawned = false;
@@ -140,32 +141,28 @@ Letter.prototype.reset = function () {
     this.prevPoints = [[0, hh, 0]];
 }
 
-Letter.prototype.step = function () {
-    // Implementación larga del paso omitida aquí por espacio...
-}
-
 function anim() {
     window.requestAnimationFrame(anim);
+
     ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, w, h);
 
     ctx.translate(hw, hh);
 
-    let done = true;
-    for (let l = 0; l < letters.length; ++l) {
+    var done = true;
+    for (var l = 0; l < letters.length; ++l) {
         letters[l].step();
         if (letters[l].phase !== 'done') done = false;
     }
 
     ctx.translate(-hw, -hh);
 
-    if (done) {
-        for (let l = 0; l < letters.length; ++l) letters[l].reset();
-    }
+    if (done)
+        for (var l = 0; l < letters.length; ++l) letters[l].reset();
 }
 
-for (let i = 0; i < opts.strings.length; ++i) {
-    for (let j = 0; j < opts.strings[i].length; ++j) {
+for (var i = 0; i < opts.strings.length; ++i) {
+    for (var j = 0; j < opts.strings[i].length; ++j) {
         letters.push(new Letter(
             opts.strings[i][j],
             j * opts.charSpacing + opts.charSpacing / 2 - opts.strings[i].length * opts.charSize / 2,
@@ -176,7 +173,7 @@ for (let i = 0; i < opts.strings.length; ++i) {
 
 anim();
 
-window.addEventListener('resize', function () {
+window.addEventListener('resize', function() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
 
