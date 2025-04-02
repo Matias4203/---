@@ -1,19 +1,93 @@
-<!-- Pantalla de registro -->
-<div id="register-screen" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #1e3c72; color: white;">
-  <h2>Registro</h2>
-  <form id="register-form">
-    <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
-    <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
-    <button type="submit">Registrar</button>
-  </form>
-  <button id="go-to-login">Volver al Inicio de Sesión</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Para evitar scroll innecesario */
+    }
+
+    #login-screen, #register-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Fondos atractivos */
+    }
+
+    #login-screen input, #register-screen input {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #login-screen button, #register-screen button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #login-screen button:hover, #register-screen button:hover {
+      background-color: #45a049;
+    }
+
+    #c {
+      display: none; /* Oculta el canvas inicialmente */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla de inicio de sesión -->
+  <div id="login-screen">
+    <h2>Inicio de Sesión</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Usuario" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="error-message" style="color: red; margin-top: 10px;"></div>
+  </div>
+
+  <!-- Pantalla de registro -->
+  <div id="register-screen" style="display: none;">
+    <h2>Registro</h2>
+    <form id="register-form">
+      <input type="text" id="new-username" placeholder="Nuevo Usuario" required>
+      <input type="password" id="new-password" placeholder="Nueva Contraseña" required>
+      <button type="submit">Registrar</button>
+    </form>
+    <button id="go-to-login">Volver al Inicio</button>
+  </div>
+
+  <!-- Canvas para la animación -->
+  <canvas id="c"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday My Love</title>
   <link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
